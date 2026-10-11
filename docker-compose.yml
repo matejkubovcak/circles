@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5174:5174"
+    volumes:
+      - ./src:/app/src
+      - ./index.html:/app/index.html
+      - ./vite.config.js:/app/vite.config.js
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    mem_limit: 1g
+    cpus: 1.5
